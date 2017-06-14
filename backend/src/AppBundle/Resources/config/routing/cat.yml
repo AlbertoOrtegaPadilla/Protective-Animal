@@ -1,0 +1,34 @@
+cat_new:
+    path: /new
+    defaults: { _controller: "AppBundle:Cat:new"}
+    methods: POST
+
+cat_edit:
+    path: /edit/{id}
+    defaults: { _controller: "AppBundle:Cat:edit", id:null}
+    methods: POST
+    
+cat_delete:
+    path: /delete/{id}
+    defaults: { _controller: "AppBundle:Cat:delete", id:null}
+    methods: POST
+    
+cat_list:
+    path: /list
+    defaults: { _controller: "AppBundle:Cat:cats"}
+    methods: GET
+    
+cat_last_cats:
+    path: /last-cats
+    defaults: { _controller: "AppBundle:Cat:lastcats"}
+    methods: GET
+    
+cat_search:
+    path: /search/{search}
+    defaults: { _controller: "AppBundle:Cat:search", search:null}
+    methods: GET
+    
+cat_detail:
+    path:   /detail/{id}
+    defaults: { _controller: "AppBundle:Cat:cat", id:null }
+    methods:  GET  

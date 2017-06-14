@@ -1,0 +1,74 @@
+BackendBundle\Entity\Blog:
+    type: entity
+    table: blog
+    indexes:
+        fk_blog_user:
+            columns:
+                - id_user
+        fk_blog_typeBlog:
+            columns:
+                - id_type_blog
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        title:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        day:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+        description:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+        urlVideo:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: url_video
+        createdAt:
+            type: datetime
+            nullable: true
+            column: created_at
+        updatedAt:
+            type: datetime
+            nullable: true
+            column: updated_at
+    manyToOne:
+        idTypeBlog:
+            targetEntity: TypeBlog
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_type_blog:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idUser:
+            targetEntity: User
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_user:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

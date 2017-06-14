@@ -1,0 +1,20 @@
+BackendBundle\Entity\TypeAnimal:
+    type: entity
+    table: type_animal
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        type:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

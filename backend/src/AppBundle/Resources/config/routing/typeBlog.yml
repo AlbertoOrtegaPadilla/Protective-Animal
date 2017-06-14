@@ -1,0 +1,4 @@
+type_blog_list:
+    path: /list
+    defaults: { _controller: "AppBundle:TypeBlog:typesBlogs"}
+    methods: GET

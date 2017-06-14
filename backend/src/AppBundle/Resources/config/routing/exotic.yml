@@ -1,0 +1,39 @@
+exotic_new:
+    path: /new
+    defaults: { _controller: "AppBundle:Exotic:new"}
+    methods: POST
+
+exotic_edit:
+    path: /edit/{id}
+    defaults: { _controller: "AppBundle:Exotic:edit", id:null}
+    methods: POST
+    
+exotic_delete:
+    path: /delete/{id}
+    defaults: { _controller: "AppBundle:Exotic:delete", id:null}
+    methods: POST
+    
+exotic_list:
+    path: /list
+    defaults: { _controller: "AppBundle:Exotic:exotics"}
+    methods: GET
+    
+exotic_last_exotics:
+    path: /last-exotics
+    defaults: { _controller: "AppBundle:Exotic:lastExotics"}
+    methods: GET
+    
+exotic_search:
+    path: /search/{search}
+    defaults: { _controller: "AppBundle:Exotic:search", search:null}
+    methods: GET
+    
+exotic_detail:
+    path:   /detail/{id}
+    defaults: { _controller: "AppBundle:Exotic:exotic", id:null }
+    methods:  GET
+    
+exotic_prueba:
+    path:   /prueba
+    defaults: { _controller: "AppBundle:Exotic:prueba" }
+    methods:  POST

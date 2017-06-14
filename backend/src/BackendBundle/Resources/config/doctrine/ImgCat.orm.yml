@@ -1,0 +1,43 @@
+BackendBundle\Entity\ImgCat:
+    type: entity
+    table: img_cat
+    indexes:
+        fk_imgCat_cat:
+            columns:
+                - id_cat
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        img:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+        createdAt:
+            type: datetime
+            nullable: true
+            column: created_at
+        updatedAt:
+            type: datetime
+            nullable: true
+            column: updated_at
+    manyToOne:
+        idCat:
+            targetEntity: Cat
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_cat:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

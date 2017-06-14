@@ -1,0 +1,4 @@
+gender_list:
+    path: /list
+    defaults: { _controller: "AppBundle:Gender:genders"}
+    methods: GET

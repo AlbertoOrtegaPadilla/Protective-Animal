@@ -1,0 +1,35 @@
+dog_new:
+    path: /new
+    defaults: { _controller: "AppBundle:Dog:new"}
+    methods: POST
+
+dog_edit:
+    path: /edit/{id}
+    defaults: { _controller: "AppBundle:Dog:edit", id:null}
+    methods: POST
+    
+dog_delete:
+    path: /delete/{id}
+    defaults: { _controller: "AppBundle:Dog:delete", id:null}
+    methods: POST
+    
+dog_list:
+    path: /list
+    defaults: { _controller: "AppBundle:Dog:dogs"}
+    methods: GET
+    
+dog_last_dogs:
+    path: /last-dogs
+    defaults: { _controller: "AppBundle:Dog:lastdogs"}
+    methods: GET
+    
+dog_search:
+    path: /search/{search}
+    defaults: { _controller: "AppBundle:Dog:search", search:null}
+    methods: GET
+    
+dog_detail:
+    path:   /detail/{id}
+    defaults: { _controller: "AppBundle:Dog:dog", id:null }
+    methods:  GET  
+

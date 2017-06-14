@@ -1,0 +1,4 @@
+type_animal_list:
+    path: /list
+    defaults: { _controller: "AppBundle:TypeAnimal:typesAnimals"}
+    methods: GET

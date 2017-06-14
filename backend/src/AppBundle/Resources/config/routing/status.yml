@@ -1,0 +1,4 @@
+status_list:
+    path: /list
+    defaults: { _controller: "AppBundle:Status:statuses"}
+    methods: GET

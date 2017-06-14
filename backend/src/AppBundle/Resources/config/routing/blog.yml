@@ -1,0 +1,34 @@
+blog_new:
+    path: /new
+    defaults: { _controller: "AppBundle:Blog:new"}
+    methods: POST
+
+blog_edit:
+    path: /edit/{id}
+    defaults: { _controller: "AppBundle:Blog:edit", id:null}
+    methods: POST
+    
+blog_delete:
+    path: /delete/{id}
+    defaults: { _controller: "AppBundle:Blog:delete", id:null}
+    methods: POST
+    
+blog_list:
+    path: /list
+    defaults: { _controller: "AppBundle:Blog:blogs"}
+    methods: GET
+    
+blog_last_blogs:
+    path: /last-blogs
+    defaults: { _controller: "AppBundle:Blog:lastBlogs"}
+    methods: GET
+    
+blog_search:
+    path: /search/{search}
+    defaults: { _controller: "AppBundle:Blog:search", search:null}
+    methods: GET
+    
+blog_detail:
+    path:   /detail/{id}
+    defaults: { _controller: "AppBundle:Blog:blog", id:null }
+    methods:  GET  

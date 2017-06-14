@@ -1,0 +1,34 @@
+exotic_new:
+    path: /new
+    defaults: { _controller: "AppBundle:Sponsor:new"}
+    methods: POST
+
+sponsor_edit:
+    path: /edit/{id}
+    defaults: { _controller: "AppBundle:Sponsor:edit", id:null}
+    methods: POST
+    
+sponsor_delete:
+    path: /delete/{id}
+    defaults: { _controller: "AppBundle:Sponsor:delete", id:null}
+    methods: POST
+    
+sponsor_list:
+    path: /list
+    defaults: { _controller: "AppBundle:Sponsor:sponsors"}
+    methods: GET
+    
+sponsor_last_exotics:
+    path: /last-sponsors
+    defaults: { _controller: "AppBundle:Sponsor:lastSponsors"}
+    methods: GET
+    
+sponsor_search:
+    path: /search/{search}
+    defaults: { _controller: "AppBundle:Sponsor:search", search:null}
+    methods: GET
+    
+sponsor_detail:
+    path:   /detail/{id}
+    defaults: { _controller: "AppBundle:Sponsor:sponsor", id:null }
+    methods:  GET  

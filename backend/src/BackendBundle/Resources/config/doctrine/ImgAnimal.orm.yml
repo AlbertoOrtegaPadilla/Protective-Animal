@@ -1,0 +1,43 @@
+BackendBundle\Entity\ImgAnimal:
+    type: entity
+    table: img_animal
+    indexes:
+        fk_imgAnimal_sponsor:
+            columns:
+                - id_sponsor
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        img:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+        createdAt:
+            type: datetime
+            nullable: true
+            column: created_at
+        updatedAt:
+            type: datetime
+            nullable: true
+            column: updated_at
+    manyToOne:
+        idSponsor:
+            targetEntity: Sponsor
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_sponsor:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

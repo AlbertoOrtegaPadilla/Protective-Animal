@@ -1,0 +1,137 @@
+BackendBundle\Entity\Exotic:
+    type: entity
+    table: exotic
+    indexes:
+        fk_exotic_user:
+            columns:
+                - id_user
+        fk_exotic_gender:
+            columns:
+                - id_gender
+        fk_exotic_size:
+            columns:
+                - id_size
+        fk_exotic_status:
+            columns:
+                - id_status
+        fk_exotic_typeExotic:
+            columns:
+                - id_type_exotic
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        breed:
+            type: string
+            nullable: true
+            length: 30
+            options:
+                fixed: false
+        age:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        description:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+        contactPerson:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: contact_person
+        phone:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        email:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        urlVideo:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: url_video
+        createdAt:
+            type: datetime
+            nullable: true
+            column: created_at
+        updatedAt:
+            type: datetime
+            nullable: true
+            column: updated_at
+    manyToOne:
+        idGender:
+            targetEntity: Gender
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_gender:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idSize:
+            targetEntity: Size
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_size:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idStatus:
+            targetEntity: Status
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_status:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idTypeExotic:
+            targetEntity: TypeExotic
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_type_exotic:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idUser:
+            targetEntity: User
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_user:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

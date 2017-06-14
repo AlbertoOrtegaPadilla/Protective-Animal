@@ -1,0 +1,20 @@
+BackendBundle\Entity\Gender:
+    type: entity
+    table: gender
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        gender:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

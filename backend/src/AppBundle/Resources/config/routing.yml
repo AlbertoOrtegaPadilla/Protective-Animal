@@ -1,0 +1,55 @@
+app_default:
+    resource: "@AppBundle/Resources/config/routing/default.yml"
+    prefix: /
+    
+app_exotic:
+    resource: "@AppBundle/Resources/config/routing/exotic.yml"
+    prefix: /exotic
+
+app_role:
+    resource: "@AppBundle/Resources/config/routing/role.yml"
+    prefix: /role
+    
+app_user:
+    resource: "@AppBundle/Resources/config/routing/user.yml"
+    prefix: /user
+
+app_type_exotic:
+    resource: "@AppBundle/Resources/config/routing/typeExotic.yml"
+    prefix: /type-exotic
+    
+app_gender:
+    resource: "@AppBundle/Resources/config/routing/gender.yml"
+    prefix: /gender
+    
+app_size:
+    resource: "@AppBundle/Resources/config/routing/size.yml"
+    prefix: /size
+    
+app_status:
+    resource: "@AppBundle/Resources/config/routing/status.yml"
+    prefix: /status
+    
+app_type_animal:
+    resource: "@AppBundle/Resources/config/routing/typeAnimal.yml"
+    prefix: /type-animal
+    
+app_type_blog:
+    resource: "@AppBundle/Resources/config/routing/typeBlog.yml"
+    prefix: /type_blog
+    
+app_dog:
+    resource: "@AppBundle/Resources/config/routing/dog.yml"
+    prefix: /dog
+    
+app_cat:
+    resource: "@AppBundle/Resources/config/routing/cat.yml"
+    prefix: /cat
+    
+app_sponsor:
+    resource: "@AppBundle/Resources/config/routing/sponsor.yml"
+    prefix: /sponsor
+    
+app_blog:
+    resource: "@AppBundle/Resources/config/routing/blog.yml"
+    prefix: /blog

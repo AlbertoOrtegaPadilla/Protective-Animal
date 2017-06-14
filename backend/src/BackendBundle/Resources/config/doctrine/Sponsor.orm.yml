@@ -1,0 +1,130 @@
+BackendBundle\Entity\Sponsor:
+    type: entity
+    table: sponsor
+    indexes:
+        fk_sponsor_user:
+            columns:
+                - id_user
+        fk_sponsor_gender:
+            columns:
+                - id_gender
+        fk_sponsor_size:
+            columns:
+                - id_size
+        fk_sponsor_typeAnimal:
+            columns:
+                - id_type_animal
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        age:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        description:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+        endCounter:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: end_counter
+        initialCounter:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: initial_counter
+        contactPerson:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: contact_person
+        phone:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        email:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        urlVideo:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: url_video
+        createdAt:
+            type: datetime
+            nullable: true
+            column: created_at
+        updatedAt:
+            type: datetime
+            nullable: true
+            column: updated_at
+    manyToOne:
+        idGender:
+            targetEntity: Gender
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_gender:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idSize:
+            targetEntity: Size
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_size:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idTypeAnimal:
+            targetEntity: TypeAnimal
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_type_animal:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idUser:
+            targetEntity: User
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_user:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

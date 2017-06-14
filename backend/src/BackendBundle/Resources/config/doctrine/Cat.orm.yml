@@ -1,0 +1,124 @@
+BackendBundle\Entity\Cat:
+    type: entity
+    table: cat
+    indexes:
+        fk_cat_user:
+            columns:
+                - id_user
+        fk_cat_gender:
+            columns:
+                - id_gender
+        fk_cat_size:
+            columns:
+                - id_size
+        fk_cat_status:
+            columns:
+                - id_status
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        breed:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        name:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        age:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        description:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+        contactPerson:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: contact_person
+        phone:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        email:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        urlVideo:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: url_video
+        createdAt:
+            type: datetime
+            nullable: true
+            column: created_at
+        updatedAt:
+            type: datetime
+            nullable: true
+            column: updated_at
+    manyToOne:
+        idGender:
+            targetEntity: Gender
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_gender:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idSize:
+            targetEntity: Size
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_size:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idStatus:
+            targetEntity: Status
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_status:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idUser:
+            targetEntity: User
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_user:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

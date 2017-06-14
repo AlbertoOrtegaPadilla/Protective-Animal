@@ -1,0 +1,39 @@
+user_new:
+    path: /new
+    defaults: { _controller: "AppBundle:User:new"}
+    methods: POST
+ 
+user_edit:
+    path: /edit
+    defaults: { _controller: "AppBundle:User:edit"}
+    methods: POST
+    
+user_upload_image:
+    path: /upload-image-user
+    defaults: { _controller: "AppBundle:User:uploadImage"}
+    methods: POST
+    
+user_delete:
+    path: /delete/{id}
+    defaults: { _controller: "AppBundle:User:delete", id:null}
+    methods: POST
+    
+user_list:
+    path: /list
+    defaults: { _controller: "AppBundle:User:users"}
+    methods: GET
+    
+user_last_users:
+    path: /last-users
+    defaults: { _controller: "AppBundle:User:lastUsers"}
+    methods: GET
+    
+user_search:
+    path: /search/{search}
+    defaults: { _controller: "AppBundle:User:search", search:null}
+    methods: GET
+    
+user_detail:
+    path: /detail/{id}
+    defaults: { _controller: "AppBundle:User:user", id:null }
+    methods: GET  
