@@ -1,0 +1,58 @@
+<div class="loader" *ngIf="loading == 'show'">
+  <img src="assets/img/ajax-gray.gif" />
+</div>
+
+<div class="col-md-12" *ngIf="detail && loading == 'hide'">
+  <hr/>
+  <h2 class="text-center">Os presento a:</h2>
+  <hr/>
+
+  <div id="carouselExampleControls" class="col-md-5 carousel slide float-left" data-ride="carousel" style="border-radius: 15px;">
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active">
+        <img class="d-block img-fluid" src="assets/img/exotic/exotic1.jpg" alt="First slide" style="border-radius: 15px;">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block img-fluid detail" src="assets/img/exotic/exotic2.jpg" alt="First slide" style="border-radius: 15px;">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block img-fluid" id="detail" src="assets/img/exotic/exotic3.jpg" alt="First slide" style="border-radius: 15px;">
+      </div>
+
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"></a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"></a>
+
+    </div>
+  </div>
+
+  <div id="detailData" class="col-md-6 float-left">
+    <small class="float-right">{{detail.createdAt.timestamp | Date}}</small>
+    <h4><strong>Nombre: </strong>{{detail.name}}</h4>
+    <h5><strong>Raza: </strong>{{detail.breed}}</h5>
+    <h5><strong>Tamaño: </strong>{{detail.idSize.size}}</h5>
+    <h5><strong>Genero: </strong>{{detail.idGender.gender}}</h5>
+    <h5><strong>Edad: </strong>{{detail.age}}</h5>
+    <h5><strong>Persona de Contacto: </strong>{{detail.contactPerson}}</h5>
+    <a href="mailto:{{detail.email}}">{{detail.email}}</a>
+    <p>{{detail.description}}</p>
+
+  </div>
+</div>
+<div class="clearfix"></div>
+<div class="container" *ngIf="detail && loading == 'hide'">
+  <button type="button" class="btn btn-secondary float-right" *ngIf="mostrarDatos === true" (click)="onShowHide(false)" [class.showingData]="mostrarDatos === false">
+    Ocultar Video
+  </button>
+  <button type="button" class="btn btn-secondary float-right" (click)="onShowHide(true)" [class.showingData]="mostrarDatos === true">
+    Mostrar Video
+  </button>
+  <div class="clearfix"></div>
+
+  <br>
+</div>
+  <div class="container" *ngIf="detail && loading == 'hide'">
+    <div class="embed-responsive embed-responsive-16by9" *ngIf="mostrarDatos === true" [innerHTML]="detail.urlVideo | sanitizeHtml">
+  </div>
+</div>
+
+<br><br><br><br><br>
