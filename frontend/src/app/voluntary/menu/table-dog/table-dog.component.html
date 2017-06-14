@@ -1,0 +1,84 @@
+<div class="container">
+  <form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="¿Que quieres ver?" value="{{searchString}}" name="searchString" [(ngModel)]="searchString"
+      />
+    </div>
+    <button type="submit" class="btn btn-default" (click)="search()">
+						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						Buscar
+					</button>
+  </form>
+</div>
+
+
+<app-module-dog *ngIf="mostrarDatos === false"></app-module-dog>
+
+<div class="container" *ngIf="mostrarDatos === true">
+
+  <app-new-dog></app-new-dog>
+
+  <br><br>
+
+  <h1>Listado Perros</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Raza</th>
+        <th>Genero</th>
+        <th>Tamaño</th>
+        <th>Status</th>
+        <th>Edad</th>
+        <th>texto</th>
+        <th>Contacto</th>
+        <th>Telefono</th>
+        <th>Correo</th>
+        <th>Video</th>
+        <th>Creado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dog of dogs">
+        <td scope="row">{{dog.name}}</td>
+        <td>{{dog.breed}}</td>
+        <td>{{dog.idGender.gender}}</td>
+        <td>{{dog.idSize.size}}</td>
+        <td>{{dog.idStatus.status}}</td>
+        <td>{{dog.age}}</td>
+        <td>{{dog.description}}</td>
+        <td>{{dog.contactPerson}}</td>
+        <td>{{dog.phone}}</td>
+        <td>{{dog.email}}</td>
+        <td>{{dog.urlVideo}}</td>
+        <td>{{dog.idUser.name}}</td>
+        <td>
+          <a class="btn btn-warning" [routerLink]="['/edit-dog', dog.id]">Editar</a>
+        </td>
+        <button type="button" class="btn btn-danger" (click)="delete(dog.id)">Eliminar</button>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <nav aria-label="Page navigation example" class="">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" [routerLink]="['/table-dog', pagePrev]" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+      </li>
+      <li class="page-item" *ngFor="let page of pages">
+        <a class="page-link" [routerLink]="['/table-dog', page + 1]">{{page + 1}}</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" [routerLink]="['/table-dog', pageNext]" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<br><br><br><br>

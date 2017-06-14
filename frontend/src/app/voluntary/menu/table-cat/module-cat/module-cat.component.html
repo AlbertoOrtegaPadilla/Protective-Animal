@@ -1,0 +1,68 @@
+<div class="container">
+
+  <app-new-cat></app-new-cat>
+
+  <br><br>
+
+  <h1>Listado Gatos</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Raza</th>
+        <th>Genero</th>
+        <th>Tamaño</th>
+        <th>Status</th>
+        <th>Edad</th>
+        <th>texto</th>
+        <th>Contacto</th>
+        <th>Telefono</th>
+        <th>Correo</th>
+        <th>Video</th>
+        <th>Creado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cat of cats">
+        <td scope="row">{{cat.name}}</td>
+        <td>{{cat.breed}}</td>
+        <td>{{cat.idGender.gender}}</td>
+        <td>{{cat.idSize.size}}</td>
+        <td>{{cat.idStatus.status}}</td>
+        <td>{{cat.age}}</td>
+        <td>{{cat.description}}</td>
+        <td>{{cat.contactPerson}}</td>
+        <td>{{cat.phone}}</td>
+        <td>{{cat.email}}</td>
+        <td>{{cat.urlVideo}}</td>
+        <td>{{cat.idUser.name}}</td>
+        <td>
+          <a class="btn btn-warning" [routerLink]="['/edit-cat', cat.id]">Editar</a>
+        </td>
+        <button type="button" class="btn btn-danger" (click)="delete(cat.id)">Eliminar</button>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <nav aria-label="Page navigation example" class="">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" [routerLink]="['/table-cat', pagePrev]" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+      </li>
+      <li class="page-item" *ngFor="let page of pages">
+        <a class="page-link" [routerLink]="['/table-cat', page + 1]">{{page + 1}}</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" [routerLink]="['/table-cat', pageNext]" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<br><br><br><br>

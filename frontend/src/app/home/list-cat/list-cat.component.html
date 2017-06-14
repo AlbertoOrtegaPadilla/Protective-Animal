@@ -1,0 +1,43 @@
+<div class="col-md-12">
+
+  <h1 class="text-center">GATOS EN ADOPCIÓN</h1>
+  <hr/>
+  <div class="container">
+    <div class="loader" *ngIf="loading == 'show'">
+      <img src="assets/img/ajax-gray.gif" />
+    </div>
+
+    <ul id="animal-list" class="float-left" *ngIf="cats && loading == 'hide'">
+      <li *ngFor="let cat of cats" class="animal-item col-md-4 float-left">
+        <div >
+          <img class="img-fluid" src="assets/img/cat.jpg" />
+        </div>
+        <div class="data">
+          <h4><a [routerLink]="['/cat-detail', cat.id]">{{cat.name}}</a></h4>
+          <p>{{cat.idGender.gender}}</p>
+        </div>
+        <div class="clearfix"></div>
+      </li>
+    </ul>
+
+    <div class="clearfix"></div>
+    <nav aria-label="Page navigation example" class="">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" [routerLink]="['/cat', pagePrev]" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item" *ngFor="let page of pages">
+          <a class="page-link" [routerLink]="['/cat', page + 1]">{{page + 1}}</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" [routerLink]="['/cat', pageNext]" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <br><br><br>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+
+.container {
+
+  border: silver 70px solid;
+  border-image-source: url("../../../assets/img/marco.jpg");
+  border-image-slice: 100;
+}
+
+h1, h3, p {
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+}
+
+hr {
+  max-width: 50%;
+}
